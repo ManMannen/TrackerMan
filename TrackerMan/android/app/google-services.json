@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "220445370366",
+    "firebase_url": "https://trackerman-9432f.firebaseio.com",
+    "project_id": "trackerman-9432f",
+    "storage_bucket": "trackerman-9432f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:220445370366:android:fb4b50d16ae0a1249802af",
+        "android_client_info": {
+          "package_name": "com.trackerman"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "220445370366-qmut1pr2f81fq43eoc43ucnp4b7d5bkc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.trackerman",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "220445370366-fkfdr3af1ekreh1alarvkh0t1jh3ne9d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCLkDSxG33EBH-hVdmAhcoHb62dXqUP8w4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "220445370366-fkfdr3af1ekreh1alarvkh0t1jh3ne9d.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,24 +1,25 @@
+// React
 import React, { useState } from 'react';
 
-import {
-  View
-} from 'react-native';
-
-// Routing 
-import { NativeRouter, Switch, Route, } from "react-router-native";
+// Plugins
+import GoogleAuth from '../plugins/Google/GoogleAuth';
 
 // Components
-import MenuHeader from './components/MenuHeader'
-import NavigationFooter from './components/NavigationFooter'
-// import Home from './pages/Home'
+
+//React Native
+import {
+  View,
+  Text,
+} from 'react-native';
+
 
 const Login = (props) => {
-
-  const [active, setActive] = useState(false)
-
   return (
     <View>
-      
+        <Text>
+          Log in with Google:
+        </Text>
+        <GoogleAuth></GoogleAuth>
     </View>
   );
 };
