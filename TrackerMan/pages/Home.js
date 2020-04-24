@@ -3,16 +3,7 @@ import React, { useState } from 'react';
 import {
   Container,
   Content,
-  FooterTab,
-  Button,
-  Text,
-  Icon,
-  Left,
-  Right,
-  Body,
-  Title,
-  Subtitle
-} from 'native-base';
+} from 'react-native';
 
 // Routing 
 import { NativeRouter, Switch, Route, } from "react-router-native";
@@ -20,22 +11,19 @@ import { NativeRouter, Switch, Route, } from "react-router-native";
 // Components
 import MenuHeader from './components/MenuHeader'
 import NavigationFooter from './components/NavigationFooter'
+// import Home from './pages/Home'
 
+const Home = (props) => {
 
-const App = ( props ) => {
   const [active, setActive] = useState(false)
 
   return (
     <NativeRouter>
       <Container>
-        <MenuHeader title="TrackerMan"/>
         <Content>
+        <MenuHeader title="TrackerMan"/>
 
-          <Switch>
-              {/* {<Route path="/" component={Home}/>} */}
-                
-              
-          </Switch>
+      
 
         </Content>
         <NavigationFooter active={active} setActive={setActive}/>
@@ -44,4 +32,4 @@ const App = ( props ) => {
   );
 };
 
-export default App;
+export default Home;
