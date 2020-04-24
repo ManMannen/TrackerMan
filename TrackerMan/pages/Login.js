@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 
 import {
-  Container,
-  Content,
+  View
 } from 'react-native';
 
 // Routing 
@@ -18,17 +17,9 @@ const Login = (props) => {
   const [active, setActive] = useState(false)
 
   return (
-    <NativeRouter>
-      <Container>
-        <MenuHeader title="TrackerMan"/>
-        <Content>
-
+    <View>
       
-
-        </Content>
-        <NavigationFooter active={active} setActive={setActive}/>
-      </Container>
-    </NativeRouter>
+    </View>
   );
 };
 

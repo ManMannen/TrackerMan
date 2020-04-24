@@ -3,15 +3,6 @@ import React, { useState } from 'react';
 import {
   Container,
   Content,
-  FooterTab,
-  Button,
-  Text,
-  Icon,
-  Left,
-  Right,
-  Body,
-  Title,
-  Subtitle
 } from 'native-base';
 
 // Routing 
@@ -20,6 +11,7 @@ import { NativeRouter, Switch, Route, } from "react-router-native";
 // Components
 import MenuHeader from './components/MenuHeader'
 import NavigationFooter from './components/NavigationFooter'
+import Home from './pages/Home'
 
 
 const App = ( props ) => {
@@ -32,7 +24,7 @@ const App = ( props ) => {
         <Content>
 
           <Switch>
-              {/* {<Route path="/" component={Home}/>} */}
+              <Route exact path="/" component={Home}/>
                 
               
           </Switch>
