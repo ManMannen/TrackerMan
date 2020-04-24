@@ -1,39 +1,107 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow strict-local
- */
+// Packages
+import React, { useState } from 'react';
+import { StyleSheet } from 'react-native';
 
-import React from 'react';
-import Footer from 'components/base/Footer'
-import Header from 'compoonents/base/Header'
-
+//Native Base
 import {
-  SafeAreaView,
-  StyleSheet,
-  ScrollView,
-  View,
+  Container,
+  Content,
+  Header,
+  Footer,
+  FooterTab,
+  Button,
   Text,
-  StatusBar,
-} from 'react-native';
+  Icon,
+  Left,
+  Right,
+  Body,
+  Title,
+  Subtitle
+} from 'native-base';
 
+// Routing 
 import { NativeRouter, Route, Link } from "react-router-native";
 
-const App = ( props ) => {
+// Components
+
+const App = (props) => {
+
+  const [active, setActive] = useState(false)
+
   return (
-    <NativeRouter>
-      <Header/>
-      <View >
-        <Text>
-          This is the main wrapper
-        </Text>
-      </View>
-     <Footer/>
-    </NativeRouter>
+
+    <Container>
+      <Header>
+        <Left>
+          <Button transparent>
+            <Icon name='arrow-back' />
+          </Button>
+        </Left>
+        <Body>
+          <Title>TrackerMan</Title>
+        </Body>
+        <Right>
+          <Button transparent>
+            <Icon name='search' />
+          </Button>
+          <Button transparent>
+            <Icon name='heart' />
+          </Button>
+          <Button transparent>
+            <Icon name='more' />
+          </Button>
+        </Right>
+      </Header>
+      <Content>
+
+
+      </Content>
+
+      <Footer>
+        <FooterTab>
+          <Button
+            vertical
+            active={active}
+            onPress={() => setActive(!active)}
+          >
+            <Icon name="home" />
+            <Text>Apps</Text>
+          </Button>
+          <Button
+            active={active}
+            vertical
+            onPress={() => setActive(!active)}
+          >
+            <Icon name="camera" />
+            <Text>Camera</Text>
+          </Button>
+          <Button
+            active={active}
+            vertical
+            onPress={() => setActive(!active)}
+          >
+            <Icon active name="navigate" />
+            <Text>Navigate</Text>
+          </Button>
+          <Button
+            vertical
+            active={active}
+            onPress={() => setActive(!active)}
+          >
+            <Icon name="person" />
+            <Text>Contact</Text>
+          </Button>
+        </FooterTab>
+      </Footer>
+    </Container>
   );
 };
+
+const styles = StyleSheet.create({
+  footer: {
+    display: "flex",
+  }
+})
 
 
 export default App;
