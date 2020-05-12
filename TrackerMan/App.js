@@ -4,104 +4,80 @@ import { StyleSheet } from 'react-native';
 
 //Native Base
 import {
-  Container,
-  Content,
-  Header,
-  Footer,
-  FooterTab,
-  Button,
+  View,
   Text,
-  Icon,
-  Left,
-  Right,
-  Body,
-  Title,
-  Subtitle
-} from 'native-base';
+} from 'react-native';
+
+import styles from './assets/styles'
 
 // Routing 
-import { NativeRouter, Route, Link } from "react-router-native";
+import { Switch, Route, Router } from "react-router-native";
+import useHistory from 'history/createMemoryHistory'
 
-// Components
+//Pages
+import Home from './pages/_Home'
+import Login from './pages/_Login'
 
-const App = (props) => {
 
+const App = () => {
   const [active, setActive] = useState(false)
-
+  const history = useHistory()
   return (
+    <Router history={history}>
+      <View style={{ flex: 1 }}>
+        <Switch>
 
-    <Container>
-      <Header>
-        <Left>
-          <Button transparent>
-            <Icon name='arrow-back' />
-          </Button>
-        </Left>
-        <Body>
-          <Title>TrackerMan</Title>
-        </Body>
-        <Right>
-          <Button transparent>
-            <Icon name='search' />
-          </Button>
-          <Button transparent>
-            <Icon name='heart' />
-          </Button>
-          <Button transparent>
-            <Icon name='more' />
-          </Button>
-        </Right>
-      </Header>
-      <Content>
+                {/* if the route matches the exact "/" path then the login screen will show */}
+                {/* else the Home page with the footer and header will be displayed */}
+
+          <Route exact path="/" component={Login} /> 
+          <Route path="/" >
+            <Container>
+
+              <Header style={{ backgroundColor: "black" }}>
+                <Left>
+                  <Icon onPress={() => history.goBack()} name="arrow-back" />
+                </Left>
+                <Body>
+                  <Title>
+                    TrackerMan
+                    </Title>
+                </Body>
+                <Right>
+    
+                </Right>
+              </Header>
+
+              <Switch>
+                {/* <Route /> Route to what pages you want jao */}
+                <Route  exact path="/home" component={Home}/> 
+              </Switch>
+            </Container>
 
 
-      </Content>
+            <Footer>
+              <FooterTab>
+                <Button>
+                  <Text>Apps</Text>
+                </Button>
+                <Button>
+                  <Text>Camera</Text>
+                </Button>
+                <Button active>
+                  <Text>Navigate</Text>
+                </Button>
+                <Button>
+                  <Text>Contact</Text>
+                </Button>
+              </FooterTab>
+            </Footer>
+          </Route>
 
-      <Footer>
-        <FooterTab>
-          <Button
-            vertical
-            active={active}
-            onPress={() => setActive(!active)}
-          >
-            <Icon name="home" />
-            <Text>Apps</Text>
-          </Button>
-          <Button
-            active={active}
-            vertical
-            onPress={() => setActive(!active)}
-          >
-            <Icon name="camera" />
-            <Text>Camera</Text>
-          </Button>
-          <Button
-            active={active}
-            vertical
-            onPress={() => setActive(!active)}
-          >
-            <Icon active name="navigate" />
-            <Text>Navigate</Text>
-          </Button>
-          <Button
-            vertical
-            active={active}
-            onPress={() => setActive(!active)}
-          >
-            <Icon name="person" />
-            <Text>Contact</Text>
-          </Button>
-        </FooterTab>
-      </Footer>
-    </Container>
+        </Switch>
+      </View>
+    </Router>
   );
 };
-
-const styles = StyleSheet.create({
-  footer: {
-    display: "flex",
-  }
-})
 
 
 export default App;

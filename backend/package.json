@@ -1,0 +1,33 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "An express backend for the TrackerMan application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ManMannen/TrackerMan.git"
+  },
+  "dependencies": {
+    "@google-cloud/firestore": "^3.7.5",
+    "dotenv": "^8.2.0",
+    "firebase-admin": "5.4.0",
+    "firebase-functions": "0.7.0",
+    "grpc": "^1.24.2",
+    "node-pre-gyp": "^0.14.0"
+  },
+  "keywords": [
+    "express",
+    "backend",
+    "node"
+  ],
+  "author": "Alexander Nilsson Melbostad",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ManMannen/TrackerMan/issues"
+  },
+  "homepage": "https://github.com/ManMannen/TrackerMan#readme"
+}
