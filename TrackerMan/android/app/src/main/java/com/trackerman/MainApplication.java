@@ -1,6 +1,7 @@
 package com.trackerman;
 
 import android.app.Application;
+import com.BV.LinearGradient.LinearGradientPackage;
 import android.content.Context;
 import com.facebook.react.PackageList;
 import com.facebook.react.ReactApplication;

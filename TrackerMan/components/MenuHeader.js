@@ -1,5 +1,8 @@
 import React from 'react';
 
+// Styling and core modules
+import styles from '../styles/styles'
+
 import {
     Header,
     Button,
@@ -9,6 +12,8 @@ import {
     Body,
     Title,
 } from 'native-base';
+
+// ---------
 
 const MenuHeader = (props) => {
     return (

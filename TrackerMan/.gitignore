@@ -57,3 +57,8 @@ buck-out/
 
 # CocoaPods
 /ios/Pods/
+
+# plugin credentials (Google, Firebase etc)
+
+config/*
+/android/app/google-services.json
