@@ -1,20 +1,8 @@
+// Packages
 import React, { useState } from 'react';
-import GoogleAuth from './plugins/GoogleAuth'
+import { StyleSheet } from 'react-native';
 
-import {
-  Footer,
-  Title,
-  FooterTab,
-  Button,
-  Right,
-  Body,
-  Left,
-  Header,
-  Icon,
-  Container,
-  Content,
-} from 'native-base';
-
+//Native Base
 import {
   View,
   Text,
@@ -90,5 +78,6 @@ const App = () => {
     </Router>
   );
 };
+
 
 export default App;

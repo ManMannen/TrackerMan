@@ -21,6 +21,12 @@
     "react-router-native": "^5.1.2",
     "styled-components": "^5.1.0",
     "uuidv4": "^6.0.7"
+
+    "@apollo/react-hooks": "^3.1.5",
+    "apollo-boost": "^0.4.7",
+    "graphql": "^15.0.0",
+    "react-native-elements": "^1.2.7",
+    "react-native-vector-icons": "^6.6.0",
   },
   "devDependencies": {
     "@babel/core": "^7.6.2",
