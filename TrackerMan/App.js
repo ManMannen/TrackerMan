@@ -12,11 +12,12 @@ import styles from './assets/styles'
 
 // Routing 
 import { Switch, Route, Router } from "react-router-native";
-import useHistory from 'history/createMemoryHistory'
+import useHistory  from 'history/createMemoryHistory'
 
 //Pages
 import Home from './pages/_Home'
 import Login from './pages/_Login'
+import ItemInfo from './pages/_ItemInfo';
 
 
 const App = () => {
@@ -33,13 +34,12 @@ const App = () => {
           <Route exact path="/" component={Login} /> 
           <Route path="/" >
             <Container>
-
-              <Header style={{ backgroundColor: "black" }}>
+              <Header style={styles.headerStyle}>
                 <Left>
-                  <Icon onPress={() => history.goBack()} name="arrow-back" />
+                  <Icon style={ styles.iconStyle } onPress={() => history.goBack()} name="arrow-back" />
                 </Left>
                 <Body>
-                  <Title>
+                  <Title style={{ fontWeight: "bold"}}>
                     TrackerMan
                     </Title>
                 </Body>
@@ -50,24 +50,26 @@ const App = () => {
 
               <Switch>
                 {/* <Route /> Route to what pages you want jao */}
-                <Route  exact path="/home" component={Home}/> 
+                <Route path="/home" component={Home}/> 
+                <Route exact path="/home/:itemId" component={ItemInfo}/> 
+                
               </Switch>
             </Container>
 
 
-            <Footer>
-              <FooterTab>
+            <Footer style={ styles.footerStyle }>
+              <FooterTab style={ styles.footerStyle }>
                 <Button>
-                  <Text>Apps</Text>
+                  <Text style={ styles.tabStyle }>Items</Text >
                 </Button>
                 <Button>
-                  <Text>Camera</Text>
+                  <Text style={ styles.tabStyle}>Camera</Text>
                 </Button>
-                <Button active>
-                  <Text>Navigate</Text>
+                <Button >
+                  <Text style={ styles.tabStyle }>Navigate</Text>
                 </Button>
                 <Button>
-                  <Text>Contact</Text>
+                  <Text style={ styles.tabStyle }>Contact</Text>
                 </Button>
               </FooterTab>
             </Footer>
