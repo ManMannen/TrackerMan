@@ -21,14 +21,14 @@ import {
 
 
 
-const Login = (props, history ) => {
+const Login = (props ) => {
 
 
   return (
     <View style={styles.googleAuth}>
       <ImageBackground source={backgroundImage} style={ styles.image }>
         <View>
-          <Text style={styles.title}>
+          <Text style={styles.Indextitle}>
             Welcome to TrackerMan!
         </Text>
           <View style={styles.spacer}>

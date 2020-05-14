@@ -3,7 +3,7 @@ import React, { Component } from "react";
 
 // Styling and core modules
 import styles from '../assets/styles'
-import { View, Text, StatusBar, Button } from 'react-native';
+import { View, StatusBar, Button } from 'react-native';
 
 // Google Components
 import { GoogleSignin, GoogleSigninButton, statusCodes } from 'react-native-google-signin';
@@ -17,11 +17,10 @@ export default class GoogleAuth extends Component {
       loggedIn: false
     }
   }
-  
+
   tap(param) {
-    
+    console.log(param)
   }
-  
   
   componentDidMount() {
     GoogleSignin.configure({
@@ -35,15 +34,9 @@ export default class GoogleAuth extends Component {
   _signIn = async () => {
     try {  
       await GoogleSignin.hasPlayServices();
-      console.log(this.props.history.location.pathname)
-      
       const userInfo = await GoogleSignin.signIn();
       this.props.history.push('/home')
-      console.log("Är jag här ens?")
-      console.log(this.props.history.pathname)
-      
       this.setState({ userInfo: userInfo, loggedIn: true });
-
       
     } catch (error) {
       if (error.code === statusCodes.SIGN_IN_CANCELLED) {
@@ -57,6 +50,12 @@ export default class GoogleAuth extends Component {
       }
     }
   };
+
+  removeRouteHistory = () => {
+      this.props.history.entries = [];
+      this.props.history.index = -1;
+      this.props.history.push("/");
+  }
   
   getCurrentUserInfo = async () => {
     try {
@@ -77,8 +76,9 @@ export default class GoogleAuth extends Component {
     try {
       await GoogleSignin.revokeAccess();
       await GoogleSignin.signOut();
+      this.removeRouteHistory()
       this.setState({ user: null, loggedIn: false }); // Remember to remove the user from your app's state as well
-      console.log("You are now logged out")
+      console.log("You are now logged out!")
     } catch (error) {
       console.error(error);
     }
