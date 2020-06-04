@@ -1,6 +1,4 @@
-import React from 'react';
 import * as Google from './helpers/GoogleMethods'
-
 
 import {
   Footer,
@@ -15,6 +13,11 @@ import {
   Container,
 } from 'native-base';
 
+// Packages
+import React, { useState } from 'react';
+import { StyleSheet } from 'react-native';
+
+//Native Base
 import {
   View,
   Text,
@@ -109,5 +112,6 @@ const App = () => {
     </Router>
   );
 };
+
 
 export default App;
