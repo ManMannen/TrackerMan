@@ -19,11 +19,10 @@ import {
 } from 'react-native';
 
 const  ItemInfo = ( props ) => {
-    const itemId = props.match.param.itemId
     return ( 
-        <View>
+        <View style={{ flex: 1/2, backgroundColor: "blue"}}>
             <Text>
-                Info page for the item { itemId } was opened
+                Info page for the item was opened
             </Text>
         </View>
      );
