@@ -209,6 +209,10 @@ dependencies {
       
       implementation 'com.facebook.android:facebook-android-sdk:7.0.0'
 
+    // React native maps API
+
+      implementation project(':react-native-maps')
+
     // Firebase integration for Google sign in
     implementation(project(":react-native-google-signin"))
 

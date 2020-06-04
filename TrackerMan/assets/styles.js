@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native';
+import { overlay } from 'react-native-paper';
 
 const styles = StyleSheet.create({
     Indextitle: {
@@ -50,7 +51,7 @@ const styles = StyleSheet.create({
         backgroundColor: "rgb(80,80,80)",
         borderBottomColor: "#6A0DAD",
         borderBottomWidth: 2,
-        fontWeight: "bold"
+        fontWeight: "bold",
     },
 
     iconStyle: {
@@ -80,15 +81,22 @@ const styles = StyleSheet.create({
         height: "70%",
         marginTop: "15%",
         borderRadius: 10,
-        opacity: 0.9
+        opacity: 0.9,
+        display: "flex",
+        overflow: "hidden"
+
     },
 
     item: {
         borderRadius: 10,
         marginVertical: 8,
         borderWidth: 2,
-        borderColor: "#6A0DAD"
-
+        borderColor: "#6A0DAD",
+        marginRight: 10,
+        padding: 6,
+        flexDirection: "row",
+        alignItems: "center",
+        justifyContent: "space-between",
       },
 
     rowTitle: {
@@ -104,12 +112,104 @@ const styles = StyleSheet.create({
         width: 350,
     },
 
-    addNewButton: {
-        backgroundColor: "#6A0DAD",
-        color: "#6A0DAD",
-        width: "100"
+    addNewItemButton: {
+        color: "white",
+        width: 130,
+        height: 50,
+        borderColor: "#6A0DAD",
+        borderWidth: 3,
+        borderRadius: 10,
+        backgroundColor: "rgb(80,80,80)",
+        padding: 10
+        
+     },
 
-    }
+    addNewItemButtonTitle: {        
+        color: "white",
+        fontSize: 12,
+        fontFamily: "Roboto",
+        fontWeight: "bold",
+
+    },
+    
+
+    overlay: {
+        backgroundColor: "red",
+        height: 100,
+        width: 100
+    },
+
+    signOutButton: {
+        color: "white",
+        marginRight: 15
+        
+    },
+    
+    signOutButtonTitle: {
+        color: "white",
+        fontSize: 20,
+        fontFamily: "Roboto",
+        fontWeight: "bold",
+        
+    }, 
+
+     modalContent: {
+        flex: 1,
+        alignItems: 'center',
+        backgroundColor: "rgb(80,80,80)",
+        padding: 100,
+    
+     },
+
+     modalTitle: {
+        color: 'white',
+        marginTop: 8,
+        fontSize: 18,
+        fontFamily: "Roboto",
+        fontWeight: "bold",
+        borderBottomColor: "white",
+        borderBottomWidth: 1,
+        marginBottom: 10
+     },
+
+     modalText: {
+        color: 'white',
+        marginTop: 18,
+        marginBottom: 10,
+        fontSize: 16,
+        fontFamily: "Roboto",
+        fontWeight: "bold",
+     },
+
+     textInput: {
+        height: 36, 
+        borderColor: 'gray',
+        paddingLeft: 6,
+        width: 250,
+        color: "white"
+     },
+
+     ModalButtonTitle: {
+         textAlign: "center",
+         marginLeft: 100
+     },
+
+     editButton: {
+         width: 52,
+         height: 40,
+         backgroundColor: "rgb(80,80,80)",
+     },
+
+     closeModalIcon: {
+         position: "absolute",
+         left: 10,
+         top: 10,
+         color: "white"
+     },
+
+     editItemModal: {
+         backgroundColor: "white"
+     }
 });
 
 export default styles;
